@@ -27,7 +27,7 @@
     <!-- V2.0新增重置session时间的filter -->
     <filter>
         <filter-name>sessionExpireFilter</filter-name>
-        <filter-class>com.mmall.controller.common.SessionExpireFilter</filter-class>
+        <filter-class>com.jikego.controller.common.SessionExpireFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>sessionExpireFilter</filter-name>
@@ -45,10 +45,12 @@
     <!--</filter-mapping>-->
 
     <listener>
+        <!--监听web容器启动和关闭-->
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
 
     <listener>
+        <!--web容器和spring容器进行整合-->
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
