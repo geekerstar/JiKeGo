@@ -98,7 +98,6 @@
         <table tableName="jikego_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
-
         <!-- mybatis插件的搭建 -->
     </context>
 </generatorConfiguration>

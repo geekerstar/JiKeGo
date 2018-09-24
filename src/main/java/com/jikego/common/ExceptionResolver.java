@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @Author: Geekerstar(jikewenku.com)
  * @Date: 2018/7/23 15:00
- * @Description:全局异常处理类
+ * @Description:全局异常处理类,防止代码及数据库信息泄露
  */
 @Slf4j
 @Component
