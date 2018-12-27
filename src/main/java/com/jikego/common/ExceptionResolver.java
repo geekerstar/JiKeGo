@@ -17,12 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 @Component
 public class ExceptionResolver implements HandlerExceptionResolver {
+
     /**
-     * @param httpServletRequest
-     * @param httpServletResponse
-     * @param o
-     * @param e
-     * @return
+     * @description: 处理异常
+     *
+     * @auther: geekerstar
+     * @date: 2018/12/27 16:05
+     * @param: [httpServletRequest, httpServletResponse, o, e]
+     * @return: org.springframework.web.servlet.ModelAndView
      */
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {

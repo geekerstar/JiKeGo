@@ -33,18 +33,18 @@ public class CategoryManageController {
     @Autowired
     private ICategoryService iCategoryService;
 
+    /**
+     * @description: 增加分类
+     *
+     * @auther: geekerstar
+     * @date: 2018/12/27 16:01
+     * @param: [httpServletRequest, categoryName, parentId]
+     * @return: com.jikego.common.ServerResponse
+     */
 
     @RequestMapping("add_category.do")
     @ResponseBody
     public ServerResponse addCategory(HttpServletRequest httpServletRequest, String categoryName, @RequestParam(value = "parentId", defaultValue = "0") int parentId) {
-        /**
-         * @description: 增加分类
-         *
-         * @auther: geekerstar
-         * @date: 2018/12/27 15:31
-         * @param: [httpServletRequest, categoryName, parentId]
-         * @return: com.jikego.common.ServerResponse
-         */
 //        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
 //        if(StringUtils.isEmpty(loginToken)){
 //            return ServerResponse.createByErrorMessage("用户未登录，无法获取当前用户的信息");
@@ -67,17 +67,17 @@ public class CategoryManageController {
     }
 
 
+    /**
+     * @description: 设置分类名
+     *
+     * @auther: geekerstar
+     * @date: 2018/12/27 16:02
+     * @param: [httpServletRequest, categoryId, categoryName]
+     * @return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("set_category_name.do")
     @ResponseBody
     public ServerResponse setCategoryName(HttpServletRequest httpServletRequest, Integer categoryId, String categoryName) {
-        /**
-         * @description: 设置分类名
-         *
-         * @auther: geekerstar
-         * @date: 2018/12/27 15:32
-         * @param: [httpServletRequest, categoryId, categoryName]
-         * @return: com.jikego.common.ServerResponse
-         */
 //        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
 //        if(StringUtils.isEmpty(loginToken)){
 //            return ServerResponse.createByErrorMessage("用户未登录，无法获取当前用户的信息");
@@ -98,17 +98,17 @@ public class CategoryManageController {
     }
 
 
+    /**
+     * @description: 获取平级分类信息
+     *
+     * @auther: geekerstar
+     * @date: 2018/12/27 16:03
+     * @param: [httpServletRequest, categoryId]
+     * @return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("get_category.do")
     @ResponseBody
     public ServerResponse getChildrenParallelCategory(HttpServletRequest httpServletRequest, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
-        /**
-         * @description: 获取平级分类信息
-         *
-         * @auther: geekerstar
-         * @date: 2018/12/27 15:32
-         * @param: [httpServletRequest, categoryId]
-         * @return: com.jikego.common.ServerResponse
-         */
 //        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
 //        if(StringUtils.isEmpty(loginToken)){
 //            return ServerResponse.createByErrorMessage("用户未登录，无法获取当前用户的信息");
@@ -127,18 +127,17 @@ public class CategoryManageController {
         return iCategoryService.getChildrenParallelCategory(categoryId);
     }
 
-
+    /**
+     * @description: 获取当前分类id并且递归查询子节点的分类id
+     *
+     * @auther: geekerstar
+     * @date: 2018/12/27 16:06
+     * @param: [httpServletRequest, categoryId]
+     * @return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("get_deep_category.do")
     @ResponseBody
     public ServerResponse getCategoryAndDeepChildrenCategory(HttpServletRequest httpServletRequest, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
-        /**
-         * @description: 获取当前分类id并且递归查询子节点的分类id
-         *
-         * @auther: geekerstar
-         * @date: 2018/12/27 15:33
-         * @param: [httpServletRequest, categoryId]
-         * @return: com.jikego.common.ServerResponse
-         */
 //        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
 //        if(StringUtils.isEmpty(loginToken)){
 //            return ServerResponse.createByErrorMessage("用户未登录，无法获取当前用户的信息");
