@@ -13,15 +13,24 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/22 9:34
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/22 9:34
+ * Description:
  */
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
+
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * description: 登录
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:41
+     * param: [username, password]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     */
     @Override
     public ServerResponse<User> login(String username, String password) {
         int resultCount = userMapper.checkUsername(username);
@@ -39,6 +48,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccess("登录成功", user);
     }
 
+    /**
+     * description: 注册
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:41
+     * param: [user]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> register(User user) {
 //        int resultCount = userMapper.checkUsername(user.getUsername());
 //        if(resultCount > 0){
@@ -69,6 +87,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMessage("注册成功");
     }
 
+    /**
+     * description: 检查合法性
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:42
+     * param: [str, type]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> checkValid(String str, String type) {
         if (org.apache.commons.lang3.StringUtils.isNotBlank(type)) {
             //开始校验
@@ -91,6 +118,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMessage("校验成功");
     }
 
+    /**
+     * description: 找回密码问题
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:42
+     * param: [username]
+     * return: com.jikego.common.ServerResponse
+     */
+    @Override
     public ServerResponse selectQuestion(String username) {
         ServerResponse validResponse = this.checkValid(username, Const.USERNAME);
         if (validResponse.isSuccess()) {
@@ -104,6 +140,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMessage("找回密码的问题是空的");
     }
 
+    /**
+     * description: 找回密码答案
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:42
+     * param: [username, question, answer]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> checkAnswer(String username, String question, String answer) {
         int resultCount = userMapper.checkAnswer(username, question, answer);
         if (resultCount > 0) {
@@ -115,6 +160,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMessage("问题的答案错误");
     }
 
+    /**
+     * description: 忘记密码
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:42
+     * param: [username, passwordNew, forgetToken]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> forgetResetPassword(String username, String passwordNew, String forgetToken) {
         if (org.apache.commons.lang3.StringUtils.isBlank(forgetToken)) {
             return ServerResponse.createByErrorMessage("参数错误,token需要传递");
@@ -141,6 +195,15 @@ public class UserServiceImpl implements IUserService {
 
     }
 
+    /**
+     * description: 重置密码
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:43
+     * param: [passwordOld, passwordNew, user]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> resetPassword(String passwordOld, String passwordNew, User user) {
         //防止横向越权，要检验一下这个用户的旧密码，一定要指定是这个用户，
         // 因我们会查询一个count(1)，如果不指定id，那么结构就是true那count>0;
@@ -157,6 +220,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMessage("密码更新失败");
     }
 
+    /**
+     * description: 更新用户信息
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:43
+     * param: [user]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     */
+    @Override
     public ServerResponse<User> updateInformation(User user) {
         //username是不能被更新的
         //email也要进行一个校验，校验新的email是不是已经存在，
@@ -180,6 +252,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMessage("更新个人信息失败");
     }
 
+    /**
+     * description: 获取用户信息
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:43
+     * param: [userId]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     */
+    @Override
     public ServerResponse<User> getInformation(Integer userId) {
         User user = userMapper.selectByPrimaryKey(userId);
         if (user == null) {
@@ -190,16 +271,17 @@ public class UserServiceImpl implements IUserService {
     }
 
 
-    //backend
+    //后台部分
 
-    /*
-     * @Description:校验是否是管理员
+    /**
+     * description: 校验是否是管理员
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 11:07
-     * @param: [user]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:43
+     * param: [user]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse checkAdminRole(User user) {
         if (user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN) {
             return ServerResponse.createBySuccess();

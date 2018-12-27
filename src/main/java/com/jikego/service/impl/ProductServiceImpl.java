@@ -25,9 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 14:20
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 14:20
+ * Description:
  */
 @Service("iProductService")
 public class ProductServiceImpl implements IProductService {
@@ -41,14 +41,15 @@ public class ProductServiceImpl implements IProductService {
     @Autowired
     private ICategoryService iCategoryService;
 
-    /*
-     * @Description: 保存或新增产品
+    /**
+     * description: 保存或新增产品
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:18
-     * @param: [product]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:38
+     * param: [product]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse saveOrUpdateProduct(Product product) {
         if (product != null) {
             if (StringUtils.isNotBlank(product.getSubImages())) {
@@ -74,14 +75,15 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createByErrorMessage("新增或更新产品参数不正确");
     }
 
-    /*
-     * @Description: 设置产品状态
+    /**
+     * description: 设置产品状态
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:21
-     * @param: [productId, status]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:38
+     * param: [productId, status]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
+    @Override
     public ServerResponse<String> setSaleStatus(Integer productId, Integer status) {
         if (productId == null || status == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
@@ -96,14 +98,15 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createByErrorMessage("修改产品销售状态失败");
     }
 
-    /*
-     * @Description: 产品详情
+    /**
+     * description: 产品详情
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:24
-     * @param: [productId]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.ProductDetailVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:38
+     * param: [productId]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.ProductDetailVo>
      */
+    @Override
     public ServerResponse<ProductDetailVo> manageProductDetail(Integer productId) {
         if (productId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
@@ -118,6 +121,14 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createBySuccess(productDetailVo);
     }
 
+    /**
+     * description: 封装产品详情对象
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:38
+     * param: [product]
+     * return: com.jikego.vo.ProductDetailVo
+     */
     private ProductDetailVo assembleProductDetailVo(Product product) {
         ProductDetailVo productDetailVo = new ProductDetailVo();
         productDetailVo.setId(product.getId());
@@ -135,7 +146,8 @@ public class ProductServiceImpl implements IProductService {
 
         Category category = categoryMapper.selectByPrimaryKey(product.getCategoryId());
         if (category == null) {
-            productDetailVo.setParentCategoryId(0);//默认根节点
+            //默认根节点
+            productDetailVo.setParentCategoryId(0);
         } else {
             productDetailVo.setParentCategoryId(category.getParentId());
         }
@@ -145,14 +157,15 @@ public class ProductServiceImpl implements IProductService {
         return productDetailVo;
     }
 
-    /*
-     * @Description: 获取商品列表
+    /**
+     * description: 获取商品列表
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:39
-     * @param: [pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:39
+     * param: [pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
+    @Override
     public ServerResponse<PageInfo> getProductList(int pageNum, int pageSize) {
         //startPage--start
         //填充自己的sql查询逻辑
@@ -169,6 +182,14 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createBySuccess(pageResult);
     }
 
+    /**
+     * description: 封装产品列表
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:39
+     * param: [product]
+     * return: com.jikego.vo.ProductListVo
+     */
     private ProductListVo assembleProductListVo(Product product) {
         ProductListVo productListVo = new ProductListVo();
         productListVo.setId(product.getId());
@@ -182,14 +203,15 @@ public class ProductServiceImpl implements IProductService {
         return productListVo;
     }
 
-    /*
-     * @Description: 搜索商品
+    /**
+     * description: 搜索商品
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:45
-     * @param: [productName, productId, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:39
+     * param: [productName, productId, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
+    @Override
     public ServerResponse<PageInfo> searchProduct(String productName, Integer productId, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         if (StringUtils.isNotBlank(productName)) {
@@ -206,14 +228,15 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createBySuccess(pageResult);
     }
 
-    /*
-     * @Description: 获取商品详情
+    /**
+     * description: 获取商品详情
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 17:21
-     * @param: [productId]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.ProductDetailVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:39
+     * param: [productId]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.ProductDetailVo>
      */
+    @Override
     public ServerResponse<ProductDetailVo> getProductDetail(Integer productId) {
         if (productId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
@@ -229,14 +252,15 @@ public class ProductServiceImpl implements IProductService {
         return ServerResponse.createBySuccess(productDetailVo);
     }
 
-    /*
-     * @Description: 通过关键字获取商品
+    /**
+     * description: 通过关键字获取商品
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 17:24
-     * @param: [keyword, categoryId, pageNum, pageSize, orderBy]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:40
+     * param: [keyword, categoryId, pageNum, pageSize, orderBy]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
+    @Override
     public ServerResponse<PageInfo> getProductByKeywordCategory(String keyword, Integer categoryId, int pageNum, int pageSize, String orderBy) {
         if (StringUtils.isBlank(keyword) && categoryId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());

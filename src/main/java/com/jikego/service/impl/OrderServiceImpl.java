@@ -54,9 +54,9 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 9:52
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 9:52
+ * Description:
  */
 @Service("iOrderService")
 @Slf4j
@@ -66,14 +66,14 @@ public class OrderServiceImpl implements IOrderService {
     private static AlipayTradeService tradeService;
 
     static {
-
-        /** 一定要在创建AlipayTradeService之前调用Configs.init()设置默认参数
-         *  Configs会读取classpath下的zfbinfo.properties文件配置信息，如果找不到该文件则确认该文件是否在classpath目录
+        /**
+         * 一定要在创建AlipayTradeService之前调用Configs.init()设置默认参数
+         * Configs会读取classpath下的zfbinfo.properties文件配置信息，如果找不到该文件则确认该文件是否在classpath目录
          */
         Configs.init("zfbinfo.properties");
-
-        /** 使用Configs提供的默认参数
-         *  AlipayTradeService可以使用单例或者为静态成员对象，不需要反复new
+        /**
+         * 使用Configs提供的默认参数
+         * AlipayTradeService可以使用单例或者为静态成员对象，不需要反复new
          */
         tradeService = new AlipayTradeServiceImpl.ClientBuilder().build();
     }
@@ -91,14 +91,15 @@ public class OrderServiceImpl implements IOrderService {
     @Autowired
     private ShippingMapper shippingMapper;
 
-    /*
-     * @Description: 创建订单
+    /**
+     * description: 创建订单
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:55
-     * @param: [userId, shippingId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:30
+     * param: [userId, shippingId]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse createOrder(Integer userId, Integer shippingId) {
 
         //从购物车中获取数据
@@ -136,7 +137,14 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(orderVo);
     }
 
-
+    /**
+     * description: 装载订单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:30
+     * param: [order, orderItemList]
+     * return: com.jikego.vo.OrderVo
+     */
     private OrderVo assembleOrderVo(Order order, List<OrderItem> orderItemList) {
         OrderVo orderVo = new OrderVo();
         orderVo.setOrderNo(order.getOrderNo());
@@ -169,7 +177,14 @@ public class OrderServiceImpl implements IOrderService {
         return orderVo;
     }
 
-
+    /**
+     * description: 装载订单项
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:30
+     * param: [orderItem]
+     * return: com.jikego.vo.OrderItemVo
+     */
     private OrderItemVo assembleOrderItemVo(OrderItem orderItem) {
         OrderItemVo orderItemVo = new OrderItemVo();
         orderItemVo.setOrderNo(orderItem.getOrderNo());
@@ -183,7 +198,14 @@ public class OrderServiceImpl implements IOrderService {
         return orderItemVo;
     }
 
-
+    /**
+     * description: 装载收货地址
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:31
+     * param: [shipping]
+     * return: com.jikego.vo.ShippingVo
+     */
     private ShippingVo assembleShippingVo(Shipping shipping) {
         ShippingVo shippingVo = new ShippingVo();
         shippingVo.setReceiverName(shipping.getReceiverName());
@@ -197,13 +219,13 @@ public class OrderServiceImpl implements IOrderService {
         return shippingVo;
     }
 
-    /*
-     * @Description: 清空购物车
+    /**
+     * description: 清空购物车
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:57
-     * @param: [cartList]
-     * @return: void
+     * auther: geekerstar
+     * date: 2018/12/27 18:31
+     * param: [cartList]
+     * return: void
      */
     private void cleanCart(List<Cart> cartList) {
         for (Cart cart : cartList) {
@@ -211,13 +233,13 @@ public class OrderServiceImpl implements IOrderService {
         }
     }
 
-    /*
-     * @Description: 减少库存
+    /**
+     * description: 减少库存
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:57
-     * @param: [orderItemList]
-     * @return: void
+     * auther: geekerstar
+     * date: 2018/12/27 18:31
+     * param: [orderItemList]
+     * return: void
      */
     private void reduceProductStock(List<OrderItem> orderItemList) {
         for (OrderItem orderItem : orderItemList) {
@@ -227,7 +249,14 @@ public class OrderServiceImpl implements IOrderService {
         }
     }
 
-
+    /**
+     * description:
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:31
+     * param: [userId, shippingId, payment]
+     * return: com.jikego.pojo.Order
+     */
     private Order assembleOrder(Integer userId, Integer shippingId, BigDecimal payment) {
         Order order = new Order();
         long orderNo = this.generateOrderNo();
@@ -248,13 +277,27 @@ public class OrderServiceImpl implements IOrderService {
         return null;
     }
 
-
+    /**
+     * description: 生成订单号
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:32
+     * param: []
+     * return: long
+     */
     private long generateOrderNo() {
         long currentTime = System.currentTimeMillis();
         return currentTime + new Random().nextInt(100);
     }
 
-
+    /**
+     * description: 获取订单总价
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:32
+     * param: [orderItemList]
+     * return: java.math.BigDecimal
+     */
     private BigDecimal getOrderTotalPrice(List<OrderItem> orderItemList) {
         BigDecimal payment = new BigDecimal("0");
         for (OrderItem orderItem : orderItemList) {
@@ -263,6 +306,14 @@ public class OrderServiceImpl implements IOrderService {
         return payment;
     }
 
+    /**
+     * description: 获取订单项
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:32
+     * param: [userId, cartList]
+     * return: com.jikego.common.ServerResponse
+     */
     private ServerResponse getCartOrderItem(Integer userId, List<Cart> cartList) {
         List<OrderItem> orderItemList = Lists.newArrayList();
         if (CollectionUtils.isEmpty(cartList)) {
@@ -294,14 +345,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(orderItemList);
     }
 
-    /*
-     * @Description: 取消订单
+    /**
+     * description: 取消订单
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:57
-     * @param: [userId, orderNo]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:32
+     * param: [userId, orderNo]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
+    @Override
     public ServerResponse<String> cancel(Integer userId, Long orderNo) {
         Order order = orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
         if (order == null) {
@@ -321,14 +373,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createByError();
     }
 
-    /*
-     * @Description: 从购物车中获取数据
+    /**
+     * description: 从购物车中获取数据
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:57
-     * @param: [userId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:32
+     * param: [userId]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse getOrderCartProduct(Integer userId) {
         OrderProductVo orderProductVo = new OrderProductVo();
         //从购物车中获取数据
@@ -350,14 +403,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(orderProductVo);
     }
 
-    /*
-     * @Description: 获取订单详情
+    /**
+     * description: 获取订单详情
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:58
-     * @param: [userId, orderNo]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.OrderVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:33
+     * param: [userId, orderNo]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.OrderVo>
      */
+    @Override
     public ServerResponse<OrderVo> getOrderDetail(Integer userId, Long orderNo) {
         Order order = orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
         if (order != null) {
@@ -368,14 +422,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createByErrorMessage("没有找到该订单");
     }
 
-    /*
-     * @Description: 获取订单列表
+    /**
+     * description: 获取订单列表
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:58
-     * @param: [userId, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:33
+     * param: [userId, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
+    @Override
     public ServerResponse<PageInfo> getOrderList(Integer userId, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Order> orderList = orderMapper.selectByUserId(userId);
@@ -385,7 +440,14 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(pageResult);
     }
 
-
+    /**
+     * description:
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:33
+     * param: [orderList, userId]
+     * return: java.util.List<com.jikego.vo.OrderVo>
+     */
     private List<OrderVo> assembleOrderVoList(List<Order> orderList, Integer userId) {
         List<OrderVo> orderVoList = Lists.newArrayList();
         for (Order order : orderList) {
@@ -402,14 +464,15 @@ public class OrderServiceImpl implements IOrderService {
         return orderVoList;
     }
 
-    /*
-     * @Description: 支付接口
+    /**
+     * description: 支付接口
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:23
-     * @param: [orderNo, userId, path]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:33
+     * param: [orderNo, userId, path]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse pay(Long orderNo, Integer userId, String path) {
         Map<String, String> resultMap = Maps.newHashMap();
         Order order = orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
@@ -417,7 +480,6 @@ public class OrderServiceImpl implements IOrderService {
             return ServerResponse.createByErrorMessage("用户没有该订单");
         }
         resultMap.put("orderNo", String.valueOf(order.getOrderNo()));
-
 
         // (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
         // 需保证商户系统端不能重复，建议通过数据库sequence生成，
@@ -477,7 +539,8 @@ public class OrderServiceImpl implements IOrderService {
                 .setUndiscountableAmount(undiscountableAmount).setSellerId(sellerId).setBody(body)
                 .setOperatorId(operatorId).setStoreId(storeId).setExtendParams(extendParams)
                 .setTimeoutExpress(timeoutExpress)
-                .setNotifyUrl(PropertiesUtil.getProperty("alipay.callback.url"))//支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
+                //支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
+                .setNotifyUrl(PropertiesUtil.getProperty("alipay.callback.url"))
                 .setGoodsDetailList(goodsDetailList);
 
 
@@ -526,7 +589,14 @@ public class OrderServiceImpl implements IOrderService {
 
     }
 
-    // 简单打印应答
+    /**
+     * description: 简单打印应答
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:34
+     * param: [response]
+     * return: void
+     */
     private void dumpResponse(AlipayResponse response) {
         if (response != null) {
             log.info(String.format("code:%s, msg:%s", response.getCode(), response.getMsg()));
@@ -538,14 +608,15 @@ public class OrderServiceImpl implements IOrderService {
         }
     }
 
-    /*
-     * @Description: 支付宝回调
+    /**
+     * description: 支付宝回调
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:48
-     * @param: [params]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:35
+     * param: [params]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse aliCallback(Map<String, String> params) {
         Long orderNo = Long.parseLong(params.get("out_trade_no"));
         String tradeNo = params.get("trade_no");
@@ -573,7 +644,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess();
     }
 
-
+    /**
+     * description: 查询订单支付状态
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:35
+     * param: [userId, orderNo]
+     * return: com.jikego.common.ServerResponse
+     */
+    @Override
     public ServerResponse queryOrderPayStatus(Integer userId, Long orderNo) {
         Order order = orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
         if (order == null) {
@@ -586,8 +665,16 @@ public class OrderServiceImpl implements IOrderService {
     }
 
 
-    //backend
-
+    //后台部分开始
+    /**
+     * description: 订单列表
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:35
+     * param: [pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     */
+    @Override
     public ServerResponse<PageInfo> manageList(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Order> orderList = orderMapper.selectAllOrder();
@@ -597,7 +684,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(pageResult);
     }
 
-
+    /**
+     * description: 订单详情
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:36
+     * param: [orderNo]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.OrderVo>
+     */
+    @Override
     public ServerResponse<OrderVo> manageDetail(Long orderNo) {
         Order order = orderMapper.selectByOrderNo(orderNo);
         if (order != null) {
@@ -608,7 +703,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createByErrorMessage("订单不存在");
     }
 
-
+    /**
+     * description: 订单搜索
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:36
+     * param: [orderNo, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     */
+    @Override
     public ServerResponse<PageInfo> manageSearch(Long orderNo, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         Order order = orderMapper.selectByOrderNo(orderNo);
@@ -623,7 +726,15 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createByErrorMessage("订单不存在");
     }
 
-
+    /**
+     * description: 发货
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:36
+     * param: [orderNo]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
+    @Override
     public ServerResponse<String> manageSendGoods(Long orderNo) {
         Order order = orderMapper.selectByOrderNo(orderNo);
         if (order != null) {
@@ -637,6 +748,14 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createByErrorMessage("订单不存在");
     }
 
+    /**
+     * description: 关单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:37
+     * param: [hour]
+     * return: void
+     */
     @Override
     public void closeOrder(int hour) {
         Date closeDateTime = DateUtils.addHours(new Date(), -hour);

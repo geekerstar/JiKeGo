@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/24 10:47
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/24 10:47
+ * Description:
  */
 
 @Service("iShippingService")
@@ -24,14 +24,15 @@ public class ShippingServiceImpl implements IShippingService {
     @Autowired
     private ShippingMapper shippingMapper;
 
-    /*
-     * @Description: 增加地址
+    /**
+     * description: 增加地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:05
-     * @param: [userId, shipping]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:40
+     * param: [userId, shipping]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse add(Integer userId, Shipping shipping) {
         shipping.setUserId(userId);
         int rowCount = shippingMapper.insert(shipping);
@@ -43,14 +44,15 @@ public class ShippingServiceImpl implements IShippingService {
         return ServerResponse.createByErrorMessage("新建地址失败");
     }
 
-    /*
-     * @Description: 删除地址
+    /**
+     * description: 删除地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:07
-     * @param: [userId, shippingId]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:40
+     * param: [userId, shippingId]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
+    @Override
     public ServerResponse<String> del(Integer userId, Integer shippingId) {
         int resultCount = shippingMapper.deleteByShippingIdUserId(userId, shippingId);
         if (resultCount > 0) {
@@ -59,14 +61,15 @@ public class ShippingServiceImpl implements IShippingService {
         return ServerResponse.createByErrorMessage("删除地址失败");
     }
 
-    /*
-     * @Description: 更新地址
+    /**
+     * description: 更新地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:10
-     * @param: [userId, shipping]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:40
+     * param: [userId, shipping]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse update(Integer userId, Shipping shipping) {
         shipping.setUserId(userId);
         int rowCount = shippingMapper.updateByShipping(shipping);
@@ -76,14 +79,15 @@ public class ShippingServiceImpl implements IShippingService {
         return ServerResponse.createByErrorMessage("更新地址失败");
     }
 
-    /*
-     * @Description: 查询地址
+    /**
+     * description: 查询地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:12
-     * @param: [userId, shippingId]
-     * @return: com.jikego.common.ServerResponse<com.jikego.pojo.Shipping>
+     * auther: geekerstar
+     * date: 2018/12/27 18:41
+     * param: [userId, shippingId]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.Shipping>
      */
+    @Override
     public ServerResponse<Shipping> select(Integer userId, Integer shippingId) {
         Shipping shipping = shippingMapper.selectByShippingIdUserId(userId, shippingId);
         if (shipping == null) {
@@ -93,14 +97,15 @@ public class ShippingServiceImpl implements IShippingService {
     }
 
 
-    /*
-     * @Description: 分页接口
+    /**
+     * description: 分页接口
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:14
-     * @param: [userId, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:41
+     * param: [userId, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
+    @Override
     public ServerResponse<PageInfo> list(Integer userId, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Shipping> shippingList = shippingMapper.selectByUserId(userId);

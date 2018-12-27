@@ -23,9 +23,9 @@ import java.util.List;
 
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/24 8:49
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/24 8:49
+ * Description:
  */
 
 @Service("iCartService")
@@ -37,14 +37,15 @@ public class CartServiceImpl implements ICartService {
     private ProductMapper productMapper;
 
 
-    /*
-     * @Description: 添加购物车
+    /**
+     * description: 添加购物车
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:44
-     * @param: [userId, productId, count]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:22
+     * param: [userId, productId, count]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
      */
+    @Override
     public ServerResponse<CartVo> add(Integer userId, Integer productId, Integer count) {
         if (productId == null || count == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
@@ -68,14 +69,15 @@ public class CartServiceImpl implements ICartService {
         return this.list(userId);
     }
 
-    /*
-     * @Description: 更新购物车
+    /**
+     * description: 更新购物车
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:45
-     * @param: [userId, productId, count]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:22
+     * param: [userId, productId, count]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
      */
+    @Override
     public ServerResponse<CartVo> update(Integer userId, Integer productId, Integer count) {
         if (productId == null || count == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
@@ -88,14 +90,15 @@ public class CartServiceImpl implements ICartService {
         return this.list(userId);
     }
 
-    /*
-     * @Description: 购物车中删除商品
+    /**
+     * description: 购物车中删除商品
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:47
-     * @param: [userId, productIds]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:22
+     * param: [userId, productIds]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
      */
+    @Override
     public ServerResponse<CartVo> deleteProduct(Integer userId, String productIds) {
         List<String> productList = Splitter.on(",").splitToList(productIds);
         if (CollectionUtils.isEmpty(productList)) {
@@ -105,40 +108,43 @@ public class CartServiceImpl implements ICartService {
         return this.list(userId);
     }
 
-    /*
-     * @Description: 查询
+    /**
+     * description: 查询
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:51
-     * @param: [userId]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:23
+     * param: [userId]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
      */
+    @Override
     public ServerResponse<CartVo> list(Integer userId) {
         CartVo cartVo = this.getCartVoLimit(userId);
         return ServerResponse.createBySuccess(cartVo);
     }
 
-    /*
-     * @Description: 选择或者反选所有
+    /**
+     * description: 选择或者反选所有
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:54
-     * @param: [userId, productId, checked]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:23
+     * param: [userId, productId, checked]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.CartVo>
      */
+    @Override
     public ServerResponse<CartVo> selectOrUnSelect(Integer userId, Integer productId, Integer checked) {
         cartMapper.checkedOrUncheckedProduct(userId, productId, checked);
         return this.list(userId);
     }
 
-    /*
-     * @Description: 获取购物车中产品数量
+    /**
+     * description: 获取购物车中产品数量
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 20:58
-     * @param: [userId]
-     * @return: com.jikego.common.ServerResponse<java.lang.Integer>
+     * auther: geekerstar
+     * date: 2018/12/27 18:23
+     * param: [userId]
+     * return: com.jikego.common.ServerResponse<java.lang.Integer>
      */
+    @Override
     public ServerResponse<Integer> getCartProductCount(Integer userId) {
         if (userId == null) {
             return ServerResponse.createBySuccess(0);
@@ -146,6 +152,14 @@ public class CartServiceImpl implements ICartService {
         return ServerResponse.createBySuccess(cartMapper.selectCartProductCount(userId));
     }
 
+    /**
+     * description: 获取库存
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:24
+     * param: [userId]
+     * return: com.jikego.vo.CartVo
+     */
     private CartVo getCartVoLimit(Integer userId) {
         CartVo cartVo = new CartVo();
         List<Cart> cartList = cartMapper.selectCartByUserId(userId);
@@ -203,6 +217,14 @@ public class CartServiceImpl implements ICartService {
         return cartVo;
     }
 
+    /**
+     * description: 返回选择状态
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:24
+     * param: [userId]
+     * return: boolean
+     */
     private boolean getAllCheckedStatus(Integer userId) {
         if (userId == null) {
             return false;

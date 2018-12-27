@@ -19,9 +19,9 @@ import java.util.Set;
 
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 11:12
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 11:12
+ * Description:
  */
 @Service("iCategoryService")
 @Slf4j
@@ -30,14 +30,15 @@ public class CategoryServiceImpl implements ICategoryService {
     @Autowired
     private CategoryMapper categoryMapper;
 
-    /*
-     * @Description: 添加分类
+    /**
+     * description: 添加分类
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 15:56
-     * @param: [categoryName, parentId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:26
+     * param: [categoryName, parentId]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse addCategory(String categoryName, Integer parentId) {
         if (parentId == null || StringUtils.isBlank(categoryName)) {
             return ServerResponse.createByErrorMessage("添加品类参数错误");
@@ -46,7 +47,8 @@ public class CategoryServiceImpl implements ICategoryService {
         Category category = new Category();
         category.setName(categoryName);
         category.setParentId(parentId);
-        category.setStatus(true);//这个分类是可用的
+        //这个分类是可用的
+        category.setStatus(true);
 
         int rowCount = categoryMapper.insert(category);
         if (rowCount > 0) {
@@ -55,14 +57,15 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createByErrorMessage("添加品类失败");
     }
 
-    /*
-     * @Description: 更新分类名称
+    /**
+     * description: 更新分类名称
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 15:56
-     * @param: [categoryId, categoryName]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:26
+     * param: [categoryId, categoryName]
+     * return: com.jikego.common.ServerResponse
      */
+    @Override
     public ServerResponse updateCategoryName(Integer categoryId, String categoryName) {
         if (categoryId == null || StringUtils.isBlank(categoryName)) {
             return ServerResponse.createByErrorMessage("更新品类参数错误");
@@ -78,14 +81,15 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createByErrorMessage("更新品类名字失败");
     }
 
-    /*
-     * @Description: 获取孩子节点的分类信息
+    /**
+     * description: 获取孩子节点的分类信息
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 15:59
-     * @param: [categoryId]
-     * @return: com.jikego.common.ServerResponse<java.util.List<com.jikego.pojo.Category>>
+     * auther: geekerstar
+     * date: 2018/12/27 18:26
+     * param: [categoryId]
+     * return: com.jikego.common.ServerResponse<java.util.List<com.jikego.pojo.Category>>
      */
+    @Override
     public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId) {
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
         if (CollectionUtils.isEmpty(categoryList)) {
@@ -94,14 +98,15 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createBySuccess(categoryList);
     }
 
-    /*
-     * @Description: 递归查询本节点的id及孩子节点的id
+    /**
+     * description: 递归查询本节点的id及孩子节点的id
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 13:29
-     * @param: [categoryId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:27
+     * param: [categoryId]
+     * return: com.jikego.common.ServerResponse<java.util.List<java.lang.Integer>>
      */
+    @Override
     public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId) {
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet, categoryId);
@@ -115,7 +120,14 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createBySuccess(categoryIdList);
     }
 
-    //递归算法，算出子节点
+    /**
+     * description: 递归算法，算出子节点
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:27
+     * param: [categorySet, categoryId]
+     * return: java.util.Set<com.jikego.pojo.Category>
+     */
     private Set<Category> findChildCategory(Set<Category> categorySet, Integer categoryId) {
         Category category = categoryMapper.selectByPrimaryKey(categoryId);
         if (category != null) {

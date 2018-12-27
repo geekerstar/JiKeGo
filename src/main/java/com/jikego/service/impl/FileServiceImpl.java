@@ -12,15 +12,24 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 16:16
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 16:16
+ * Description:
  */
 
 @Service("iFileService")
 @Slf4j
 public class FileServiceImpl implements IFileService {
 
+    /**
+     * description: 上传
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:28
+     * param: [file, path]
+     * return: java.lang.String
+     */
+    @Override
     public String upload(MultipartFile file, String path) {
         String fileName = file.getOriginalFilename();
         //扩展名
