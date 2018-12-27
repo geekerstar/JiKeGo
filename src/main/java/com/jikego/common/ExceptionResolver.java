@@ -12,11 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @Author: Geekerstar(jikewenku.com)
  * @Date: 2018/7/23 15:00
- * @Description:全局异常处理类,防止代码及数据库信息泄露
+ * @Description: 全局异常处理类, 防止代码及数据库信息泄露
  */
 @Slf4j
 @Component
 public class ExceptionResolver implements HandlerExceptionResolver {
+    /**
+     * @param httpServletRequest
+     * @param httpServletResponse
+     * @param o
+     * @param e
+     * @return
+     */
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
         log.error("{} Exception", httpServletRequest.getRequestURI(), e);
