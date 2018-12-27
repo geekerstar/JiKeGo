@@ -13,9 +13,9 @@ import java.text.SimpleDateFormat;
 
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 9:37
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 9:37
+ * Description:
  */
 @Slf4j
 public class JsonUtil {

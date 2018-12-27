@@ -3,7 +3,9 @@ package com.jikego.util;
 import java.security.MessageDigest;
 
 /**
- * Created by Geekerstar
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 9:37
+ * Description:
  */
 public class MD5Util {
 
@@ -25,21 +27,23 @@ public class MD5Util {
     }
 
     /**
-     * 返回大写MD5
-     *
-     * @param origin
-     * @param charsetname
-     * @return
+     * description: 返回大写MD5
+     * <p>
+     * auther: geekerstar
+     * date: 2018/12/27 19:50
+     * param: [origin, charsetname]
+     * return: java.lang.String
      */
     private static String MD5Encode(String origin, String charsetname) {
         String resultString = null;
         try {
             resultString = new String(origin);
             MessageDigest md = MessageDigest.getInstance("MD5");
-            if (charsetname == null || "".equals(charsetname))
+            if (charsetname == null || "".equals(charsetname)) {
                 resultString = byteArrayToHexString(md.digest(resultString.getBytes()));
-            else
+            } else {
                 resultString = byteArrayToHexString(md.digest(resultString.getBytes(charsetname)));
+            }
         } catch (Exception exception) {
         }
         return resultString.toUpperCase();

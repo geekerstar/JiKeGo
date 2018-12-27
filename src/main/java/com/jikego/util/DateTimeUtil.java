@@ -8,15 +8,17 @@ import org.joda.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 15:13
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 15:13
+ * Description:
  */
 public class DateTimeUtil {
-    //joda-time
 
-    //str->Date
-    //Date->str
+    /**
+     * joda-time
+     * str->Date
+     * Date->str
+     */
     public static final String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
 

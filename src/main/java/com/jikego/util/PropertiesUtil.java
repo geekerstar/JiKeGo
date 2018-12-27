@@ -8,9 +8,9 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 15:05
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 15:05
+ * Description:
  */
 @Slf4j
 public class PropertiesUtil {

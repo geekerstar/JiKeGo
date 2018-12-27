@@ -3,9 +3,9 @@ package com.jikego.util;
 import java.math.BigDecimal;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/24 9:09
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/24 9:09
+ * Description:
  */
 public class BigDecimalUtil {
 
@@ -35,6 +35,7 @@ public class BigDecimalUtil {
     public static BigDecimal div(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
-        return b1.divide(b2, 2, BigDecimal.ROUND_HALF_UP);//四舍五入,保留2位小数
+        //四舍五入,保留2位小数
+        return b1.divide(b2, 2, BigDecimal.ROUND_HALF_UP);
     }
 }

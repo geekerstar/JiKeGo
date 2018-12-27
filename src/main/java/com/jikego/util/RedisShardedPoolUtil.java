@@ -6,20 +6,20 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ShardedJedis;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 9:26
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 9:26
+ * Description:
  */
 @Slf4j
 public class RedisShardedPoolUtil {
 
-    /*
-     * @Description: 设置key的有效期，单位是秒
+    /**
+     * description: 设置key的有效期，单位是秒
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/23 9:31
-     * @param: [key, exTime]
-     * @return: java.lang.Long
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key, exTime]
+     * return: java.lang.Long
      */
     public static Long expire(String key, int exTime) {
         ShardedJedis jedis = null;
@@ -36,7 +36,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
-    //exTime的单位是秒
+    /**
+     * description: exTime的单位是秒
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key, value, exTime]
+     * return: java.lang.String
+     */
     public static String setEx(String key, String value, int exTime) {
         ShardedJedis jedis = null;
         String result = null;
@@ -52,6 +59,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * description: 
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key, value]
+     * return: java.lang.String
+     */
     public static String set(String key, String value) {
         ShardedJedis jedis = null;
         String result = null;
@@ -68,6 +83,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * description: 
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key, value]
+     * return: java.lang.String
+     */
     public static String getSet(String key, String value) {
         ShardedJedis jedis = null;
         String result = null;
@@ -84,7 +107,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
-
+    /**
+     * description: 
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key]
+     * return: java.lang.String
+     */
     public static String get(String key) {
         ShardedJedis jedis = null;
         String result = null;
@@ -100,6 +130,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * description: 
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key]
+     * return: java.lang.Long
+     */
     public static Long del(String key) {
         ShardedJedis jedis = null;
         Long result = null;
@@ -115,6 +153,14 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * description: 
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 19:52
+     * param: [key, value]
+     * return: java.lang.Long
+     */
     public static Long setnx(String key, String value) {
         ShardedJedis jedis = null;
         Long result = null;
