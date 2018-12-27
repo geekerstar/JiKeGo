@@ -14,7 +14,7 @@ public class RedisPoolUtil {
 
     /**
      * description: 设置key的有效期，单位是秒
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:51
      * param: [key, exTime]
@@ -37,7 +37,7 @@ public class RedisPoolUtil {
 
     /**
      * description: exTime的单位是秒
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:51
      * param: [key, value, exTime]
@@ -60,7 +60,7 @@ public class RedisPoolUtil {
 
     /**
      * description:
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:51
      * param: [key, value]
@@ -84,7 +84,7 @@ public class RedisPoolUtil {
 
     /**
      * description:
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:51
      * param: [key]
@@ -107,7 +107,7 @@ public class RedisPoolUtil {
 
     /**
      * description:
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:51
      * param: [key]

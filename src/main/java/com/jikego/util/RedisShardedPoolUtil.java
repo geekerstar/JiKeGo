@@ -15,7 +15,7 @@ public class RedisShardedPoolUtil {
 
     /**
      * description: 设置key的有效期，单位是秒
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key, exTime]
@@ -38,7 +38,7 @@ public class RedisShardedPoolUtil {
 
     /**
      * description: exTime的单位是秒
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key, value, exTime]
@@ -60,8 +60,8 @@ public class RedisShardedPoolUtil {
     }
 
     /**
-     * description: 
-     *
+     * description:
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key, value]
@@ -84,8 +84,8 @@ public class RedisShardedPoolUtil {
     }
 
     /**
-     * description: 
-     *
+     * description:
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key, value]
@@ -108,8 +108,8 @@ public class RedisShardedPoolUtil {
     }
 
     /**
-     * description: 
-     *
+     * description:
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key]
@@ -131,8 +131,8 @@ public class RedisShardedPoolUtil {
     }
 
     /**
-     * description: 
-     *
+     * description:
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 19:52
      * param: [key]
@@ -154,10 +154,10 @@ public class RedisShardedPoolUtil {
     }
 
     /**
-     * description: 
-     *
+     * description:
+     * <p>
      * auther: geekerstar
-     * date: 2018/12/27 19:52
+     * date: 2018/12/27 19:56
      * param: [key, value]
      * return: java.lang.Long
      */

@@ -43,7 +43,7 @@ public class ProductManageController {
 
     /**
      * description: 后台保存商品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:55
      * param: [httpServletRequest, product]
@@ -72,7 +72,7 @@ public class ProductManageController {
 
     /**
      * description: 后台设置产品上下架
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:55
      * param: [httpServletRequest, productId, status]
@@ -102,7 +102,7 @@ public class ProductManageController {
 
     /**
      * description: 后台获取商品详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:56
      * param: [httpServletRequest, productId]
@@ -132,7 +132,7 @@ public class ProductManageController {
 
     /**
      * description: 后台商品列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:56
      * param: [httpServletRequest, pageNum, pageSize]
@@ -162,7 +162,7 @@ public class ProductManageController {
 
     /**
      * description: 后台商品搜索
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:56
      * param: [httpServletRequest, productName, productId, pageNum, pageSize]
@@ -193,7 +193,7 @@ public class ProductManageController {
 
     /**
      * description: 后台SpringMVC文件上传
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:56
      * param: [httpServletRequest, file, request]
@@ -235,7 +235,7 @@ public class ProductManageController {
 
     /**
      * description: 后台富文本上传
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:56
      * param: [httpServletRequest, file, request, response]

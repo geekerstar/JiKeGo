@@ -93,7 +93,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 创建订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:30
      * param: [userId, shippingId]
@@ -139,7 +139,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 装载订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:30
      * param: [order, orderItemList]
@@ -179,7 +179,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 装载订单项
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:30
      * param: [orderItem]
@@ -200,7 +200,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 装载收货地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:31
      * param: [shipping]
@@ -221,7 +221,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 清空购物车
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:31
      * param: [cartList]
@@ -235,7 +235,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 减少库存
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:31
      * param: [orderItemList]
@@ -251,7 +251,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description:
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:31
      * param: [userId, shippingId, payment]
@@ -279,7 +279,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 生成订单号
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:32
      * param: []
@@ -292,7 +292,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 获取订单总价
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:32
      * param: [orderItemList]
@@ -308,7 +308,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 获取订单项
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:32
      * param: [userId, cartList]
@@ -347,7 +347,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 取消订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:32
      * param: [userId, orderNo]
@@ -375,7 +375,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 从购物车中获取数据
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:32
      * param: [userId]
@@ -405,7 +405,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 获取订单详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:33
      * param: [userId, orderNo]
@@ -424,7 +424,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 获取订单列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:33
      * param: [userId, pageNum, pageSize]
@@ -442,7 +442,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description:
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:33
      * param: [orderList, userId]
@@ -466,7 +466,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 支付接口
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:33
      * param: [orderNo, userId, path]
@@ -591,7 +591,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 简单打印应答
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:34
      * param: [response]
@@ -610,7 +610,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 支付宝回调
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:35
      * param: [params]
@@ -646,7 +646,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 查询订单支付状态
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:35
      * param: [userId, orderNo]
@@ -666,9 +666,10 @@ public class OrderServiceImpl implements IOrderService {
 
 
     //后台部分开始
+
     /**
      * description: 订单列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:35
      * param: [pageNum, pageSize]
@@ -686,7 +687,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 订单详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:36
      * param: [orderNo]
@@ -705,7 +706,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 订单搜索
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:36
      * param: [orderNo, pageNum, pageSize]
@@ -728,7 +729,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 发货
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:36
      * param: [orderNo]
@@ -750,7 +751,7 @@ public class OrderServiceImpl implements IOrderService {
 
     /**
      * description: 关单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:37
      * param: [hour]

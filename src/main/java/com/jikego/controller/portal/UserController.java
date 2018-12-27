@@ -33,7 +33,7 @@ public class UserController {
 
     /**
      * description: 用户登录
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:14
      * param: [username, password, session, httpServletResponse]
@@ -56,7 +56,7 @@ public class UserController {
 
     /**
      * description: 用户登出
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:15
      * param: [httpServletRequest, httpServletResponse]
@@ -75,7 +75,7 @@ public class UserController {
 
     /**
      * description: 用户注册
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:15
      * param: [user]
@@ -89,7 +89,7 @@ public class UserController {
 
     /**
      * description: 校验功能
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:15
      * param: [str, type]
@@ -104,7 +104,7 @@ public class UserController {
 
     /**
      * description: 获取用户登录信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:15
      * param: [httpServletRequest]
@@ -129,7 +129,7 @@ public class UserController {
 
     /**
      * description: 忘记密码
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:15
      * param: [username]
@@ -144,7 +144,7 @@ public class UserController {
 
     /**
      * description: 检查问题答案
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:16
      * param: [username, question, answer]
@@ -158,7 +158,7 @@ public class UserController {
 
     /**
      * description: 忘记密码中的重置密码
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:16
      * param: [username, passwordNew, forgetToken]
@@ -172,7 +172,7 @@ public class UserController {
 
     /**
      * description: 登录状态下重置密码
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:16
      * param: [httpServletRequest, passwordOld, passwordNew]
@@ -195,7 +195,7 @@ public class UserController {
 
     /**
      * description: 更新用户个人信息功能
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:16
      * param: [httpServletRequest, user]
@@ -226,7 +226,7 @@ public class UserController {
 
     /**
      * description: 获取用户详细信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:16
      * param: [httpServletRequest]

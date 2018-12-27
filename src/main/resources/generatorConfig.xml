@@ -72,7 +72,8 @@
         <table tableName="jikego_shipping" domainObjectName="Shipping" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
-        <table tableName="jikego_cart" domainObjectName="Cart" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="jikego_cart" domainObjectName="Cart" enableCountByExample="false"
+               enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="jikego_cart_item" domainObjectName="CartItem" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
@@ -95,7 +96,8 @@
             <columnOverride column="detail" jdbcType="VARCHAR"/>
             <columnOverride column="sub_images" jdbcType="VARCHAR"/>
         </table>
-        <table tableName="jikego_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="jikego_user" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
         <!-- mybatis插件的搭建 -->

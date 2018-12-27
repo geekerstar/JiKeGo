@@ -42,7 +42,7 @@ public class OrderController {
 
     /**
      * description: 创建订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:01
      * param: [httpServletRequest, shippingId]
@@ -66,7 +66,7 @@ public class OrderController {
 
     /**
      * description: 取消订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:02
      * param: [httpServletRequest, orderNo]
@@ -90,7 +90,7 @@ public class OrderController {
 
     /**
      * description: 获取购物车订单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:04
      * param: [httpServletRequest]
@@ -114,7 +114,7 @@ public class OrderController {
 
     /**
      * description: 订单详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:04
      * param: [httpServletRequest, orderNo]
@@ -138,7 +138,7 @@ public class OrderController {
 
     /**
      * description: 订单列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:05
      * param: [httpServletRequest, pageNum, pageSize]
@@ -162,7 +162,7 @@ public class OrderController {
 
     /**
      * description: 支付
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:05
      * param: [httpServletRequest, orderNo, request]
@@ -186,7 +186,7 @@ public class OrderController {
 
     /**
      * description: 支付宝回调
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:05
      * param: [request]
@@ -231,7 +231,7 @@ public class OrderController {
 
     /**
      * description: 查询订单支付状态
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:05
      * param: [httpServletRequest, orderNo]

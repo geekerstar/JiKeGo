@@ -38,13 +38,13 @@ public class CloseOrderTask {
 
     /**
      * description: v1
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:45
      * param: []
      * return: void
      */
-   //@Scheduled(cron="0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
+    //@Scheduled(cron="0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
     public void closeOrderTaskV1() {
         log.info("关闭订单定时任务启动");
         int hour = Integer.parseInt(PropertiesUtil.getProperty("close.order.task.time.hour", "2"));
@@ -54,7 +54,7 @@ public class CloseOrderTask {
 
     /**
      * description: v2
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:46
      * param: []
@@ -77,7 +77,7 @@ public class CloseOrderTask {
 
     /**
      * description: v3
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:46
      * param: []
@@ -114,7 +114,7 @@ public class CloseOrderTask {
 
     /**
      * description: v4
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:46
      * param: []
@@ -145,7 +145,7 @@ public class CloseOrderTask {
 
     /**
      * description: 关单
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:46
      * param: [lockName]

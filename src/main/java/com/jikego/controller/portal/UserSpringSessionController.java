@@ -34,7 +34,7 @@ public class UserSpringSessionController {
 
     /**
      * description: 用户登录
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:17
      * param: [username, password, session, httpServletResponse]
@@ -59,7 +59,7 @@ public class UserSpringSessionController {
 
     /**
      * description: 登出
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:18
      * param: [session, httpServletRequest, httpServletResponse]
@@ -79,7 +79,7 @@ public class UserSpringSessionController {
 
     /**
      * description: 获取用户信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:18
      * param: [session, httpServletRequest]

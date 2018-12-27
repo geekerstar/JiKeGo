@@ -33,13 +33,19 @@ import java.util.Map;
 public class Main {
     private static Log log = LogFactory.getLog(Main.class);
 
-    // 支付宝当面付2.0服务
+    /**
+     * 支付宝当面付2.0服务
+     */
     private static AlipayTradeService tradeService;
 
-    // 支付宝当面付2.0服务（集成了交易保障接口逻辑）
+    /**
+     * 支付宝当面付2.0服务（集成了交易保障接口逻辑）
+     */
     private static AlipayTradeService tradeWithHBService;
 
-    // 支付宝交易保障接口服务，供测试接口api使用，请先阅读readme.txt
+    /**
+     * 支付宝交易保障接口服务，供测试接口api使用，请先阅读readme.txt
+     */
     private static AlipayMonitorService monitorService;
 
     static {
@@ -62,7 +68,11 @@ public class Main {
                 .setFormat("json").build();
     }
 
-    // 简单打印应答
+    /**
+     * 简单打印应答
+     *
+     * @param response
+     */
     private void dumpResponse(AlipayResponse response) {
         if (response != null) {
             log.info(String.format("code:%s, msg:%s", response.getCode(), response.getMsg()));

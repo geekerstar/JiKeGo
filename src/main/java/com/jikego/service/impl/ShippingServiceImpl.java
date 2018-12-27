@@ -26,7 +26,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     /**
      * description: 增加地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:40
      * param: [userId, shipping]
@@ -46,7 +46,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     /**
      * description: 删除地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:40
      * param: [userId, shippingId]
@@ -63,7 +63,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     /**
      * description: 更新地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:40
      * param: [userId, shipping]
@@ -81,7 +81,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     /**
      * description: 查询地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:41
      * param: [userId, shippingId]
@@ -99,7 +99,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     /**
      * description: 分页接口
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:41
      * param: [userId, pageNum, pageSize]

@@ -31,7 +31,7 @@ public class CartController {
 
     /**
      * description: 购物车列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:24
      * param: [httpServletRequest]
@@ -54,7 +54,7 @@ public class CartController {
 
     /**
      * description: 添加到购物车
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:24
      * param: [httpServletRequest, count, productId]
@@ -77,7 +77,7 @@ public class CartController {
 
     /**
      * description: 更新购物车(用加号减号改变购物车数量)
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:24
      * param: [httpServletRequest, count, productId]
@@ -100,7 +100,7 @@ public class CartController {
 
     /**
      * description: 购物车中删除产品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:25
      * param: [httpServletRequest, productIds]
@@ -124,7 +124,7 @@ public class CartController {
 
     /**
      * description: 全选
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:25
      * param: [httpServletRequest]
@@ -147,7 +147,7 @@ public class CartController {
 
     /**
      * description: 全反选
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:25
      * param: [httpServletRequest]
@@ -170,7 +170,7 @@ public class CartController {
 
     /**
      * description: 单独选
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:25
      * param: [httpServletRequest, productId]
@@ -194,7 +194,7 @@ public class CartController {
 
     /**
      * description: 单独反选
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 16:25
      * param: [httpServletRequest, productId]
@@ -215,14 +215,14 @@ public class CartController {
         return iCartService.selectOrUnSelect(user.getId(), productId, Const.Cart.UN_CHECKED);
     }
 
-   /**
-    * description: 获取购物车中产品数量：查询当前用户的购物车里面的产品数量,如果一个产品有10个,那么数量就是10.不安商品种类算，按数量算，这是电商的通用做法
-    *
-    * auther: geekerstar
-    * date: 2018/12/27 17:50
-    * param: [httpServletRequest]
-    * return: com.jikego.common.ServerResponse<java.lang.Integer>
-    */
+    /**
+     * description: 获取购物车中产品数量：查询当前用户的购物车里面的产品数量,如果一个产品有10个,那么数量就是10.不安商品种类算，按数量算，这是电商的通用做法
+     * <p>
+     * auther: geekerstar
+     * date: 2018/12/27 17:50
+     * param: [httpServletRequest]
+     * return: com.jikego.common.ServerResponse<java.lang.Integer>
+     */
     @RequestMapping("get_cart_product_count.do")
     @ResponseBody
     public ServerResponse<Integer> getCartProductCount(HttpServletRequest httpServletRequest) {

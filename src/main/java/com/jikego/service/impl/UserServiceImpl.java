@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 登录
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:41
      * param: [username, password]
@@ -50,7 +50,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 注册
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:41
      * param: [user]
@@ -89,7 +89,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 检查合法性
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:42
      * param: [str, type]
@@ -120,7 +120,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 找回密码问题
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:42
      * param: [username]
@@ -142,7 +142,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 找回密码答案
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:42
      * param: [username, question, answer]
@@ -162,7 +162,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 忘记密码
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:42
      * param: [username, passwordNew, forgetToken]
@@ -197,7 +197,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 重置密码
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:43
      * param: [passwordOld, passwordNew, user]
@@ -222,7 +222,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 更新用户信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:43
      * param: [user]
@@ -254,7 +254,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 获取用户信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:43
      * param: [userId]
@@ -275,7 +275,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * description: 校验是否是管理员
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:43
      * param: [user]

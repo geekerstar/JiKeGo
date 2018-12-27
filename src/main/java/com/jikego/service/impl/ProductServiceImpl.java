@@ -43,7 +43,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 保存或新增产品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:38
      * param: [product]
@@ -77,7 +77,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 设置产品状态
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:38
      * param: [productId, status]
@@ -100,7 +100,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 产品详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:38
      * param: [productId]
@@ -123,7 +123,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 封装产品详情对象
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:38
      * param: [product]
@@ -159,7 +159,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 获取商品列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:39
      * param: [pageNum, pageSize]
@@ -184,7 +184,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 封装产品列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:39
      * param: [product]
@@ -205,7 +205,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 搜索商品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:39
      * param: [productName, productId, pageNum, pageSize]
@@ -230,7 +230,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 获取商品详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:39
      * param: [productId]
@@ -254,7 +254,7 @@ public class ProductServiceImpl implements IProductService {
 
     /**
      * description: 通过关键字获取商品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:40
      * param: [keyword, categoryId, pageNum, pageSize, orderBy]

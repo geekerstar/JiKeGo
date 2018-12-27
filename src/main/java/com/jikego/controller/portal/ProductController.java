@@ -27,7 +27,7 @@ public class ProductController {
 
     /**
      * description: 商品详情
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:06
      * param: [productId]
@@ -47,7 +47,7 @@ public class ProductController {
 
     /**
      * description: 商品列表
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:06
      * param: [keyword, categoryId, pageNum, pageSize, orderBy]
@@ -66,7 +66,7 @@ public class ProductController {
     /**
      * description: 商品列表RESTful
      * http://www.verynavi.com/product/手机/100012/1/10/price_asc
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:07
      * param: [keyword, categoryId, pageNum, pageSize, orderBy]
@@ -121,7 +121,7 @@ public class ProductController {
 
     /**
      * description: 商品列表错误案例
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:08
      * param: [keyword, pageNum, pageSize, orderBy]

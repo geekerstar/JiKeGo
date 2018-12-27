@@ -36,7 +36,7 @@ public class CategoryManageController {
 
     /**
      * description: 后台增加分类
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:53
      * param: [httpServletRequest, categoryName, parentId]
@@ -69,7 +69,7 @@ public class CategoryManageController {
 
     /**
      * description: 后台设置分类名
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:53
      * param: [httpServletRequest, categoryId, categoryName]
@@ -100,7 +100,7 @@ public class CategoryManageController {
 
     /**
      * description: 后台获取平级分类信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:53
      * param: [httpServletRequest, categoryId]
@@ -129,7 +129,7 @@ public class CategoryManageController {
 
     /**
      * description: 后台获取当前分类id并且递归查询子节点的分类id
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 17:54
      * param: [httpServletRequest, categoryId]

@@ -39,7 +39,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 添加购物车
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:22
      * param: [userId, productId, count]
@@ -71,7 +71,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 更新购物车
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:22
      * param: [userId, productId, count]
@@ -92,7 +92,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 购物车中删除商品
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:22
      * param: [userId, productIds]
@@ -110,7 +110,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 查询
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:23
      * param: [userId]
@@ -124,7 +124,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 选择或者反选所有
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:23
      * param: [userId, productId, checked]
@@ -138,7 +138,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 获取购物车中产品数量
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:23
      * param: [userId]
@@ -154,7 +154,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 获取库存
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:24
      * param: [userId]
@@ -219,7 +219,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * description: 返回选择状态
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:24
      * param: [userId]

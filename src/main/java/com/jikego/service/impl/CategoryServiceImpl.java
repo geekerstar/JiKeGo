@@ -32,7 +32,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * description: 添加分类
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:26
      * param: [categoryName, parentId]
@@ -59,7 +59,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * description: 更新分类名称
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:26
      * param: [categoryId, categoryName]
@@ -83,7 +83,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * description: 获取孩子节点的分类信息
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:26
      * param: [categoryId]
@@ -100,7 +100,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * description: 递归查询本节点的id及孩子节点的id
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:27
      * param: [categoryId]
@@ -122,7 +122,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     /**
      * description: 递归算法，算出子节点
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:27
      * param: [categorySet, categoryId]

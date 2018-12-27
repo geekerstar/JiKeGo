@@ -32,7 +32,7 @@ public class ShippingController {
 
     /**
      * description: 增加收货地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:13
      * param: [httpServletRequest, shipping]
@@ -55,7 +55,7 @@ public class ShippingController {
 
     /**
      * description: 删除收货地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:13
      * param: [httpServletRequest, shippingId]
@@ -78,7 +78,7 @@ public class ShippingController {
 
     /**
      * description: 更新收货地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:13
      * param: [httpServletRequest, shipping]
@@ -102,7 +102,7 @@ public class ShippingController {
 
     /**
      * description: 查询收货地址
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:13
      * param: [httpServletRequest, shippingId]
@@ -125,7 +125,7 @@ public class ShippingController {
 
     /**
      * description: 分页
-     *
+     * <p>
      * auther: geekerstar
      * date: 2018/12/27 18:14
      * param: [pageNum, pageSize, httpServletRequest]
