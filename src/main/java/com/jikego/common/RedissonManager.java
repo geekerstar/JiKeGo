@@ -9,7 +9,10 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 /**
- * Created by Geekerstar
+ * description:
+ *
+ * auther: geekerstar
+ * date: 2018/12/27 17:59
  */
 @Component
 @Slf4j

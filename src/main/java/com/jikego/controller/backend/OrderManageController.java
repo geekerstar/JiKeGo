@@ -22,9 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 13:08
- * @Description:
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 13:08
+ * Description: 后台订单管理
  */
 @Controller
 @RequestMapping("/manage/order")
@@ -35,13 +35,14 @@ public class OrderManageController {
     @Autowired
     private IOrderService iOrderService;
 
-    /*
-     * @Description: 订单列表
+
+    /**
+     * description: 后台订单列表
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:53
-     * @param: [session, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 17:54
+     * param: [httpServletRequest, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
     @RequestMapping("list.do")
     @ResponseBody
@@ -68,13 +69,13 @@ public class OrderManageController {
         return iOrderService.manageList(pageNum, pageSize);
     }
 
-    /*
-     * @Description: 订单详情
+    /**
+     * description: 后台订单详情
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:53
-     * @param: [session, orderNo]
-     * @return: com.jikego.common.ServerResponse<com.jikego.vo.OrderVo>
+     * auther: geekerstar
+     * date: 2018/12/27 17:54
+     * param: [httpServletRequest, orderNo]
+     * return: com.jikego.common.ServerResponse<com.jikego.vo.OrderVo>
      */
     @RequestMapping("detail.do")
     @ResponseBody
@@ -99,13 +100,13 @@ public class OrderManageController {
         return iOrderService.manageDetail(orderNo);
     }
 
-    /*
-     * @Description: 订单搜索
+    /**
+     * description: 后台订单搜索
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:54
-     * @param: [session, orderNo, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 17:54
+     * param: [httpServletRequest, orderNo, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
     @RequestMapping("search.do")
     @ResponseBody
@@ -131,13 +132,13 @@ public class OrderManageController {
         return iOrderService.manageSearch(orderNo, pageNum, pageSize);
     }
 
-    /*
-     * @Description: 发货
+    /**
+     * description: 后台发货
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:54
-     * @param: [session, orderNo]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 17:55
+     * param: [httpServletRequest, orderNo]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
     @RequestMapping("send_goods.do")
     @ResponseBody

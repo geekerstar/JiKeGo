@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 13:09
- * @Description:
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 13:09
+ * Description:
  */
 public class RedisShardedPool {
     /**

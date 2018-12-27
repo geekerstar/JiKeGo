@@ -5,9 +5,9 @@ import java.util.Set;
 import com.google.common.collect.Sets;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/22 10:33
- * @Description:
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/22 10:33
+ * Description:
  */
 public class Const {
     public static final String CURRENT_USER = "currentUser";

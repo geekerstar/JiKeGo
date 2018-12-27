@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 10:58
- * @Description: 后台分类管理
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 10:58
+ * Description: 后台分类管理
  */
 @Controller
 @RequestMapping("/manage/category")
@@ -33,15 +33,15 @@ public class CategoryManageController {
     @Autowired
     private ICategoryService iCategoryService;
 
-    /**
-     * @description: 增加分类
-     *
-     * @auther: geekerstar
-     * @date: 2018/12/27 16:01
-     * @param: [httpServletRequest, categoryName, parentId]
-     * @return: com.jikego.common.ServerResponse
-     */
 
+    /**
+     * description: 后台增加分类
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 17:53
+     * param: [httpServletRequest, categoryName, parentId]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("add_category.do")
     @ResponseBody
     public ServerResponse addCategory(HttpServletRequest httpServletRequest, String categoryName, @RequestParam(value = "parentId", defaultValue = "0") int parentId) {
@@ -68,12 +68,12 @@ public class CategoryManageController {
 
 
     /**
-     * @description: 设置分类名
+     * description: 后台设置分类名
      *
-     * @auther: geekerstar
-     * @date: 2018/12/27 16:02
-     * @param: [httpServletRequest, categoryId, categoryName]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:53
+     * param: [httpServletRequest, categoryId, categoryName]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("set_category_name.do")
     @ResponseBody
@@ -99,12 +99,12 @@ public class CategoryManageController {
 
 
     /**
-     * @description: 获取平级分类信息
+     * description: 后台获取平级分类信息
      *
-     * @auther: geekerstar
-     * @date: 2018/12/27 16:03
-     * @param: [httpServletRequest, categoryId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:53
+     * param: [httpServletRequest, categoryId]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("get_category.do")
     @ResponseBody
@@ -128,12 +128,12 @@ public class CategoryManageController {
     }
 
     /**
-     * @description: 获取当前分类id并且递归查询子节点的分类id
+     * description: 后台获取当前分类id并且递归查询子节点的分类id
      *
-     * @auther: geekerstar
-     * @date: 2018/12/27 16:06
-     * @param: [httpServletRequest, categoryId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:54
+     * param: [httpServletRequest, categoryId]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("get_deep_category.do")
     @ResponseBody

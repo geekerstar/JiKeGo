@@ -6,9 +6,9 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import java.io.Serializable;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/22 9:36
- * @Description:通用的响应对象
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/22 9:36
+ * Description:通用的响应对象
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 /**

@@ -6,9 +6,9 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 8:14
- * @Description: redis连接池
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 8:14
+ * Description: redis连接池
  */
 public class RedisPool {
     /**

@@ -21,9 +21,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 15:18
- * @Description:
+ * author Geekerstar(jikewenku.com)
+ * Date 2018/7/23 15:18
+ * Description
  */
 @Slf4j
 public class AuthorityInterceptor implements HandlerInterceptor {
@@ -77,8 +77,14 @@ public class AuthorityInterceptor implements HandlerInterceptor {
         if (user == null || (user.getRole().intValue() != Const.Role.ROLE_ADMIN)) {
             //返回false.即不会调用controller里的方法
             response.reset();//这里要添加reset，否则报异常 getWriter() has already been called for this response.
-            response.setCharacterEncoding("UTF-8");//这里要设置编码，否则会乱码
-            response.setContentType("application/json;charset=UTF-8");//这里要设置返回值的类型，因为全部是json接口。
+            /**
+             * 这里要设置编码，否则会乱码
+             */
+            response.setCharacterEncoding("UTF-8");
+            /**
+             * 这里要设置返回值的类型，因为全部是json接口。
+             */
+            response.setContentType("application/json;charset=UTF-8");
 
             PrintWriter out = response.getWriter();
 

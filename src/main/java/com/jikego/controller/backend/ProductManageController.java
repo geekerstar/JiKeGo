@@ -24,9 +24,9 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 14:13
- * @Description:
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 14:13
+ * Description: 后台商品管理
  */
 @Controller
 @RequestMapping("/manage/product")
@@ -41,13 +41,13 @@ public class ProductManageController {
     @Autowired
     private IFileService iFileService;
 
-    /*
-     * @Description: 保存商品
+    /**
+     * description: 后台保存商品
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:16
-     * @param: [session, product]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:55
+     * param: [httpServletRequest, product]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("save.do")
     @ResponseBody
@@ -70,13 +70,13 @@ public class ProductManageController {
         return iProductService.saveOrUpdateProduct(product);
     }
 
-    /*
-     * @Description: 设置产品上下架
+    /**
+     * description: 后台设置产品上下架
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:21
-     * @param: [session, productId, status]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:55
+     * param: [httpServletRequest, productId, status]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("set_sale_status.do")
     @ResponseBody
@@ -100,13 +100,13 @@ public class ProductManageController {
         return iProductService.setSaleStatus(productId, status);
     }
 
-    /*
-     * @Description: 获取产品详情
+    /**
+     * description: 后台获取商品详情
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 15:21
-     * @param: [session, productId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:56
+     * param: [httpServletRequest, productId]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("detail.do")
     @ResponseBody
@@ -130,13 +130,13 @@ public class ProductManageController {
         return iProductService.manageProductDetail(productId);
     }
 
-    /*
-     * @Description: 后台商品列表
+    /**
+     * description: 后台商品列表
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 15:46
-     * @param: [session, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:56
+     * param: [httpServletRequest, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("list.do")
     @ResponseBody
@@ -160,13 +160,13 @@ public class ProductManageController {
         return iProductService.getProductList(pageNum, pageSize);
     }
 
-    /*
-     * @Description: 商品搜索
+    /**
+     * description: 后台商品搜索
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 16:44
-     * @param: [session, productName, productId, pageNum, pageSize]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:56
+     * param: [httpServletRequest, productName, productId, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("search.do")
     @ResponseBody
@@ -191,13 +191,13 @@ public class ProductManageController {
 
     }
 
-    /*
-     * @Description: SpringMVC文件上传
+    /**
+     * description: 后台SpringMVC文件上传
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 16:40
-     * @param: [session, file, request]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 17:56
+     * param: [httpServletRequest, file, request]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("upload.do")
     @ResponseBody
@@ -233,13 +233,13 @@ public class ProductManageController {
         return ServerResponse.createBySuccess(fileMap);
     }
 
-    /*
-     * @Description: 富文本上传
+    /**
+     * description: 后台富文本上传
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/23 17:09
-     * @param:
-     * @return:
+     * auther: geekerstar
+     * date: 2018/12/27 17:56
+     * param: [httpServletRequest, file, request, response]
+     * return: java.util.Map
      */
     @RequestMapping("richtext_img_upload.do")
     @ResponseBody

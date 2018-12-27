@@ -18,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/22 16:59
- * @Description:
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/6/22 16:59
+ * Description: 后台用户管理
  */
 
 @Controller
@@ -29,13 +29,13 @@ public class UserManageController {
     @Autowired
     private IUserService iUserService;
 
-    /*
-     * @Description: 管理员登录
+    /**
+     * description: 后台管理员登录
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 15:44
-     * @param: [username, password, session]
-     * @return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     * auther: geekerstar
+     * date: 2018/12/27 17:57
+     * param: [username, password, session, httpServletResponse]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody

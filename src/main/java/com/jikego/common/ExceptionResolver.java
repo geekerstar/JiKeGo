@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 15:00
- * @Description: 全局异常处理类, 防止代码及数据库信息泄露
+ * author: Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 15:00
+ * Description: 全局异常处理类, 防止代码及数据库信息泄露
  */
 @Slf4j
 @Component
 public class ExceptionResolver implements HandlerExceptionResolver {
 
     /**
-     * @description: 处理异常
+     * description: 处理异常
      *
-     * @auther: geekerstar
-     * @date: 2018/12/27 16:05
-     * @param: [httpServletRequest, httpServletResponse, o, e]
-     * @return: org.springframework.web.servlet.ModelAndView
+     * auther: geekerstar
+     * date: 2018/12/27 17:58
+     * param: [httpServletRequest, httpServletResponse, o, e]
+     * return: org.springframework.web.servlet.ModelAndView
      */
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {

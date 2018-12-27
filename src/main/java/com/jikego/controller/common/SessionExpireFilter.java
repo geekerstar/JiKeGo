@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 10:55
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 10:55
+ * Description:
  */
 public class SessionExpireFilter implements Filter {
     @Override
