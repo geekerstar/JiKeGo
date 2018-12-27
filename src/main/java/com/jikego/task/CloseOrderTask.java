@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 16:42
- * @Description:定时关单
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 16:42
+ * Description: 定时关单
  */
 @Component
 @Slf4j
@@ -35,7 +35,16 @@ public class CloseOrderTask {
         RedisShardedPoolUtil.del(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
     }
 
-    //    @Scheduled(cron="0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
+
+    /**
+     * description: v1
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:45
+     * param: []
+     * return: void
+     */
+   //@Scheduled(cron="0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
     public void closeOrderTaskV1() {
         log.info("关闭订单定时任务启动");
         int hour = Integer.parseInt(PropertiesUtil.getProperty("close.order.task.time.hour", "2"));
@@ -43,6 +52,14 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    /**
+     * description: v2
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:46
+     * param: []
+     * return: void
+     */
     //    @Scheduled(cron="0 */1 * * * ?")
     public void closeOrderTaskV2() {
         log.info("关闭订单定时任务启动");
@@ -58,6 +75,14 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    /**
+     * description: v3
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:46
+     * param: []
+     * return: void
+     */
     @Scheduled(cron = "0 */1 * * * ?")
     public void closeOrderTaskV3() {
         log.info("关闭订单定时任务启动");
@@ -87,6 +112,14 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    /**
+     * description: v4
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:46
+     * param: []
+     * return: void
+     */
     //    @Scheduled(cron="0 */1 * * * ?")
     public void closeOrderTaskV4() {
         RLock lock = redissonManager.getRedisson().getLock(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
@@ -110,6 +143,14 @@ public class CloseOrderTask {
         }
     }
 
+    /**
+     * description: 关单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:46
+     * param: [lockName]
+     * return: void
+     */
     private void closeOrder(String lockName) {
         RedisShardedPoolUtil.expire(lockName, 5);//有效期5秒，防止死锁
         log.info("获取{},ThreadName:{}", Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK, Thread.currentThread().getName());
