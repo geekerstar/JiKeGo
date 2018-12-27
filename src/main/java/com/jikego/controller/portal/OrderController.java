@@ -27,9 +27,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 9:49
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 9:49
+ * Description: 订单
  */
 @Controller
 @RequestMapping("/order/")
@@ -40,6 +40,14 @@ public class OrderController {
     @Autowired
     private IOrderService iOrderService;
 
+    /**
+     * description: 创建订单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:01
+     * param: [httpServletRequest, shippingId]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("create.do")
     @ResponseBody
     public ServerResponse create(HttpServletRequest httpServletRequest, Integer shippingId) {
@@ -56,6 +64,14 @@ public class OrderController {
         return iOrderService.createOrder(user.getId(), shippingId);
     }
 
+    /**
+     * description: 取消订单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:02
+     * param: [httpServletRequest, orderNo]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("cancel.do")
     @ResponseBody
     public ServerResponse cancel(HttpServletRequest httpServletRequest, Long orderNo) {
@@ -72,6 +88,14 @@ public class OrderController {
         return iOrderService.cancel(user.getId(), orderNo);
     }
 
+    /**
+     * description: 获取购物车订单
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:04
+     * param: [httpServletRequest]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("get_order_cart_product.do")
     @ResponseBody
     public ServerResponse getOrderCartProduct(HttpServletRequest httpServletRequest) {
@@ -88,6 +112,14 @@ public class OrderController {
         return iOrderService.getOrderCartProduct(user.getId());
     }
 
+    /**
+     * description: 订单详情
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:04
+     * param: [httpServletRequest, orderNo]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("detail.do")
     @ResponseBody
     public ServerResponse detail(HttpServletRequest httpServletRequest, Long orderNo) {
@@ -104,6 +136,14 @@ public class OrderController {
         return iOrderService.getOrderDetail(user.getId(), orderNo);
     }
 
+    /**
+     * description: 订单列表
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:05
+     * param: [httpServletRequest, pageNum, pageSize]
+     * return: com.jikego.common.ServerResponse
+     */
     @RequestMapping("list.do")
     @ResponseBody
     public ServerResponse list(HttpServletRequest httpServletRequest, @RequestParam(value = "pageNum", defaultValue = "1") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
@@ -120,13 +160,13 @@ public class OrderController {
         return iOrderService.getOrderList(user.getId(), pageNum, pageSize);
     }
 
-    /*
-     * @Description: 支付
+    /**
+     * description: 支付
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:21
-     * @param: [session, orderNo, request]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:05
+     * param: [httpServletRequest, orderNo, request]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("pay.do")
     @ResponseBody
@@ -144,13 +184,13 @@ public class OrderController {
         return iOrderService.pay(orderNo, user.getId(), path);
     }
 
-    /*
-     * @Description: 支付宝回调
+    /**
+     * description: 支付宝回调
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:39
-     * @param: [request]
-     * @return: java.lang.Object
+     * auther: geekerstar
+     * date: 2018/12/27 18:05
+     * param: [request]
+     * return: java.lang.Object
      */
     @RequestMapping("alipay_callback.do")
     @ResponseBody
@@ -189,6 +229,14 @@ public class OrderController {
         return Const.AlipayCallback.RESPONSE_FAILED;
     }
 
+    /**
+     * description: 查询订单支付状态
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:05
+     * param: [httpServletRequest, orderNo]
+     * return: com.jikego.common.ServerResponse<java.lang.Boolean>
+     */
     @RequestMapping("query_order_pay_status.do")
     @ResponseBody
     public ServerResponse<Boolean> queryOrderPayStatus(HttpServletRequest httpServletRequest, Long orderNo) {

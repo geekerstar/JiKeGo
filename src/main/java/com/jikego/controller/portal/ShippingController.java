@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/24 10:46
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/24 10:46
+ * Description: 收货地址
  */
 @Controller
 @RequestMapping("/shipping/")
@@ -30,13 +30,13 @@ public class ShippingController {
     @Autowired
     private IShippingService iShippingService;
 
-    /*
-     * @Description: 增加地址
+    /**
+     * description: 增加收货地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:04
-     * @param: [session, shipping]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:13
+     * param: [httpServletRequest, shipping]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("add.do")
     @ResponseBody
@@ -53,13 +53,13 @@ public class ShippingController {
         return iShippingService.add(user.getId(), shipping);
     }
 
-    /*
-     * @Description: 删除地址
+    /**
+     * description: 删除收货地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:07
-     * @param: [session, shippingId]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:13
+     * param: [httpServletRequest, shippingId]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("del.do")
     @ResponseBody
@@ -76,13 +76,13 @@ public class ShippingController {
         return iShippingService.del(user.getId(), shippingId);
     }
 
-    /*
-     * @Description: 更新地址
+    /**
+     * description: 更新收货地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:09
-     * @param: [session, shipping]
-     * @return: com.jikego.common.ServerResponse
+     * auther: geekerstar
+     * date: 2018/12/27 18:13
+     * param: [httpServletRequest, shipping]
+     * return: com.jikego.common.ServerResponse
      */
     @RequestMapping("update.do")
     @ResponseBody
@@ -100,13 +100,13 @@ public class ShippingController {
     }
 
 
-    /*
-     * @Description: 查询地址
+    /**
+     * description: 查询收货地址
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:12
-     * @param: [session, shippingId]
-     * @return: com.jikego.common.ServerResponse<com.jikego.pojo.Shipping>
+     * auther: geekerstar
+     * date: 2018/12/27 18:13
+     * param: [httpServletRequest, shippingId]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.Shipping>
      */
     @RequestMapping("select.do")
     @ResponseBody
@@ -123,13 +123,13 @@ public class ShippingController {
         return iShippingService.select(user.getId(), shippingId);
     }
 
-    /*
-     * @Description: 分页
+    /**
+     * description: 分页
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/21 21:14
-     * @param: [pageNum, pageSize, session]
-     * @return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
+     * auther: geekerstar
+     * date: 2018/12/27 18:14
+     * param: [pageNum, pageSize, httpServletRequest]
+     * return: com.jikego.common.ServerResponse<com.github.pagehelper.PageInfo>
      */
     @RequestMapping("list.do")
     @ResponseBody

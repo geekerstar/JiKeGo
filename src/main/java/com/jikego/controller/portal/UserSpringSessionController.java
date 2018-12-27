@@ -20,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/7/23 13:53
- * @Description:
+ * @author: Geekerstar(jikewenku.com)
+ * Date: 2018/7/23 13:53
+ * Description:
  */
 @Controller
 @RequestMapping("/user/springsession/")
@@ -33,22 +33,19 @@ public class UserSpringSessionController {
 
 
     /**
-     * 用户登录
+     * description: 用户登录
      *
-     * @param username
-     * @param password
-     * @param session
-     * @return
+     * auther: geekerstar
+     * date: 2018/12/27 18:17
+     * param: [username, password, session, httpServletResponse]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
      */
     @RequestMapping(value = "login.do", method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session, HttpServletResponse httpServletResponse) {
-
         //测试全局异常
 //        int i = 0;
 //        int j = 666/i;
-
-
         ServerResponse<User> response = iUserService.login(username, password);
         if (response.isSuccess()) {
 
@@ -60,6 +57,14 @@ public class UserSpringSessionController {
         return response;
     }
 
+    /**
+     * description: 登出
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:18
+     * param: [session, httpServletRequest, httpServletResponse]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
     @RequestMapping(value = "logout.do", method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<String> logout(HttpSession session, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
@@ -72,6 +77,14 @@ public class UserSpringSessionController {
         return ServerResponse.createBySuccess();
     }
 
+    /**
+     * description: 获取用户信息
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:18
+     * param: [session, httpServletRequest]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     */
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpSession session, HttpServletRequest httpServletRequest) {

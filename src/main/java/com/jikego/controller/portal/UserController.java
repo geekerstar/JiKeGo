@@ -20,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/22 9:04
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/22 9:04
+ * Description:
  */
 @Controller
 @RequestMapping("/user/")
@@ -31,13 +31,13 @@ public class UserController {
     @Autowired
     private IUserService iUserService;
 
-    /*
-     * @Description: 用户登录
+    /**
+     * description: 用户登录
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 9:28
-     * @param: [username, password, session]
-     * @return: java.lang.Object
+     * auther: geekerstar
+     * date: 2018/12/27 18:14
+     * param: [username, password, session, httpServletResponse]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
@@ -45,7 +45,7 @@ public class UserController {
         //service-->mybatis-->dao
         ServerResponse<User> response = iUserService.login(username, password);
         if (response.isSuccess()) {
-//            session.setAttribute(Const.CURRENT_USER, response.getData());
+            //session.setAttribute(Const.CURRENT_USER, response.getData());
             CookieUtil.writeLoginToken(httpServletResponse, session.getId());
             RedisShardedPoolUtil.setEx(session.getId(), JsonUtil.obj2String(response.getData()), Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
 
@@ -54,13 +54,13 @@ public class UserController {
 
     }
 
-    /*
-     * @Description: 用户登出
+    /**
+     * description: 用户登出
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 11:29
-     * @param: [session]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:15
+     * param: [httpServletRequest, httpServletResponse]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
     @RequestMapping(value = "logout.do", method = RequestMethod.POST)
     @ResponseBody
@@ -72,28 +72,28 @@ public class UserController {
         return ServerResponse.createBySuccess();
     }
 
-    /*
-     * @Description: 用户注册
-     *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/7/9 13:29
-     * @param:
-     * @return:
-     */
 
+    /**
+     * description: 用户注册
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:15
+     * param: [user]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> register(User user) {
         return iUserService.register(user);
     }
 
-    /*
-     * @Description: 校验功能
+    /**
+     * description: 校验功能
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 14:51
-     * @param: [str, type]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:15
+     * param: [str, type]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
     @RequestMapping(value = "check_valid.do", method = RequestMethod.POST)
     @ResponseBody
@@ -101,15 +101,15 @@ public class UserController {
         return iUserService.checkValid(str, type);
     }
 
-    /*
-     * @Description: 获取用户登录信息
-     *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 14:52
-     * @param:
-     * @return:
-     */
 
+    /**
+     * description: 获取用户登录信息
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:15
+     * param: [httpServletRequest]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     */
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpServletRequest httpServletRequest) {
@@ -126,15 +126,15 @@ public class UserController {
         }
         return ServerResponse.createByErrorMessage("用户未登录,无法获取当前用户的信息");
     }
-    /*
-     * @Description: 忘记密码
-     *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 14:52
-     * @param: [username]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
-     */
 
+    /**
+     * description: 忘记密码
+     *
+     * auther: geekerstar
+     * date: 2018/12/27 18:15
+     * param: [username]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
+     */
     @RequestMapping(value = "forget_get_question.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> forgetGetQuestion(String username) {
@@ -142,43 +142,41 @@ public class UserController {
     }
 
 
-    /*
-     * @Description: 检查问题答案
+    /**
+     * description: 检查问题答案
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 14:53
-     * @param:
-     * @return:
+     * auther: geekerstar
+     * date: 2018/12/27 18:16
+     * param: [username, question, answer]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
-
     @RequestMapping(value = "forget_check_answer.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> forgetCheckAnswer(String username, String question, String answer) {
         return iUserService.checkAnswer(username, question, answer);
     }
 
-    /*
-     * @Description: 忘记密码中的重置密码
+    /**
+     * description: 忘记密码中的重置密码
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 15:30
-     * @param:
-     * @return:
+     * auther: geekerstar
+     * date: 2018/12/27 18:16
+     * param: [username, passwordNew, forgetToken]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
-
     @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> forgetRestPassword(String username, String passwordNew, String forgetToken) {
         return iUserService.forgetResetPassword(username, passwordNew, forgetToken);
     }
 
-    /*
-     * @Description: 登录状态下重置密码
+    /**
+     * description: 登录状态下重置密码
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 16:08
-     * @param: [session, passwordOld, passwordNew]
-     * @return: com.jikego.common.ServerResponse<java.lang.String>
+     * auther: geekerstar
+     * date: 2018/12/27 18:16
+     * param: [httpServletRequest, passwordOld, passwordNew]
+     * return: com.jikego.common.ServerResponse<java.lang.String>
      */
     @RequestMapping(value = "reset_password.do", method = RequestMethod.POST)
     @ResponseBody
@@ -195,13 +193,13 @@ public class UserController {
         return iUserService.resetPassword(passwordOld, passwordNew, user);
     }
 
-    /*
-     * @Description: 更新用户个人信息功能
+    /**
+     * description: 更新用户个人信息功能
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 16:27
-     * @param: [session, user]
-     * @return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     * auther: geekerstar
+     * date: 2018/12/27 18:16
+     * param: [httpServletRequest, user]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
      */
     @RequestMapping(value = "update_information.do", method = RequestMethod.POST)
     @ResponseBody
@@ -226,13 +224,13 @@ public class UserController {
         return response;
     }
 
-    /*
-     * @Description: 获取用户详细信息
+    /**
+     * description: 获取用户详细信息
      *
-     * @auther: Geekerstar(jikewenku.com)
-     * @date: 2018/6/22 17:14
-     * @param: [session]
-     * @return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
+     * auther: geekerstar
+     * date: 2018/12/27 18:16
+     * param: [httpServletRequest]
+     * return: com.jikego.common.ServerResponse<com.jikego.pojo.User>
      */
     @RequestMapping(value = "get_information.do", method = RequestMethod.POST)
     @ResponseBody
