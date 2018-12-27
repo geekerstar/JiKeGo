@@ -3,9 +3,9 @@ package com.jikego.vo;
 import java.math.BigDecimal;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 12:21
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 12:21
+ * Description:
  */
 public class OrderItemVo {
     private Long orderNo;

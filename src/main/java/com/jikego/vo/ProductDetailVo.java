@@ -3,9 +3,9 @@ package com.jikego.vo;
 import java.math.BigDecimal;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/23 14:59
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/23 14:59
+ * Description:
  */
 public class ProductDetailVo {
     private Integer id;

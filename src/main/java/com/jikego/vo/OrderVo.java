@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 12:20
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 12:20
+ * Description:
  */
 public class OrderVo {
     private Long orderNo;
@@ -27,7 +27,9 @@ public class OrderVo {
 
     private String createTime;
 
-    //订单明细
+    /**
+     * 订单明细
+     */
     private List<OrderItemVo> orderItemVoList;
 
     private String imageHost;

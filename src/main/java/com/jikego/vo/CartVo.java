@@ -4,15 +4,18 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/24 8:57
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/24 8:57
+ * Description:
  */
 public class CartVo {
 
     private List<CartProductVo> cartProductVoList;
     private BigDecimal cartTotalPrice;
-    private Boolean allChecked;//是否已经都勾选
+    /**
+     * 是否已经都勾选
+     */
+    private Boolean allChecked;
     private String imageHost;
 
     public List<CartProductVo> getCartProductVoList() {

@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 12:50
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 12:50
+ * Description:
  */
 public class OrderProductVo {
 

@@ -1,9 +1,9 @@
 package com.jikego.vo;
 
 /**
- * @Author: Geekerstar(jikewenku.com)
- * @Date: 2018/6/25 12:23
- * @Description:
+ * @author Geekerstar(jikewenku.com)
+ * Date: 2018/6/25 12:23
+ * Description:
  */
 public class ShippingVo {
     private String receiverName;
