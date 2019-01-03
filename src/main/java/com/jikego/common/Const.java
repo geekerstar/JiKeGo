@@ -55,7 +55,7 @@ public class Const {
         /**
          * 产品状态
          */
-        ON_SALE(1, "在线");
+        ON_SALE(1, "在售");
         private String value;
         private int code;
 

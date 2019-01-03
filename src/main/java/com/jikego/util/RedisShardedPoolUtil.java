@@ -8,7 +8,7 @@ import redis.clients.jedis.ShardedJedis;
 /**
  * @author Geekerstar(jikewenku.com)
  * Date: 2018/7/23 9:26
- * Description:
+ * Description: Redis分片连接池工具
  */
 @Slf4j
 public class RedisShardedPoolUtil {

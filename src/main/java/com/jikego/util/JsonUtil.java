@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 /**
  * @author Geekerstar(jikewenku.com)
  * Date: 2018/7/23 9:37
- * Description:
+ * Description: json序列化
  */
 @Slf4j
 public class JsonUtil {

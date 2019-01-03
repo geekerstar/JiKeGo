@@ -9,6 +9,7 @@
 以下是临时展示域名，如果失效，请观看视频演示
 
 前台预览：http://www.verynavi.com
+
 后台预览：http://admin.verynavi.com
 
 ### 视频演示
@@ -18,7 +19,9 @@
 ### 项目地址
 
 前台前端：https://github.com/geekerstar/JiKeGo-frontend
+
 前台后端：https://github.com/geekerstar/JiKeGo-backend
+
 后台：https://github.com/geekerstar/JiKeGo
 
 ### 极客购前端-前台界面

@@ -19,7 +19,7 @@ import java.io.IOException;
 /**
  * @author Geekerstar(jikewenku.com)
  * Date: 2018/7/23 10:55
- * Description:
+ * Description: 单点登录之SessionExpireFilter重置session有效期
  */
 public class SessionExpireFilter implements Filter {
     @Override

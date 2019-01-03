@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * author: Geekerstar(jikewenku.com)
  * Date: 2018/7/23 13:09
- * Description:
+ * Description: Redis分片连接池
  */
 public class RedisShardedPool {
     /**

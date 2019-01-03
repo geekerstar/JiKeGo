@@ -10,14 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author Geekerstar(jikewenku.com)
  * Date: 2018/7/23 10:21
- * Description:
+ * Description: cookie工具类，解决集群环境下单点登录问题
  */
 @Slf4j
 public class CookieUtil {
+    /**
+     * 这个写在了一级域名下，所以二级域名也适用
+     */
     private final static String COOKIE_DOMAIN = ".verynavi.com";
     private final static String COOKIE_NAME = "jikego_login_token";
 
-
+    /**
+     * description: 从客户端读取cookie
+     *
+     * auther: geekerstar
+     * date: 2018/12/28 17:09
+     * param: [request]
+     * return: java.lang.String
+     */
     public static String readLoginToken(HttpServletRequest request) {
         Cookie[] cks = request.getCookies();
         if (cks != null) {
@@ -32,6 +42,14 @@ public class CookieUtil {
         return null;
     }
 
+    /**
+     * description: 将cookie写入客户端
+     *
+     * auther: geekerstar
+     * date: 2018/12/28 17:09
+     * param: [response, token]
+     * return: void
+     */
     public static void writeLoginToken(HttpServletResponse response, String token) {
         Cookie ck = new Cookie(COOKIE_NAME, token);
         ck.setDomain(COOKIE_DOMAIN);
@@ -46,6 +64,14 @@ public class CookieUtil {
         response.addCookie(ck);
     }
 
+    /**
+     * description: 删除cookie
+     *
+     * auther: geekerstar
+     * date: 2018/12/28 17:09
+     * param: [request, response]
+     * return: void
+     */
     public static void delLoginToken(HttpServletRequest request, HttpServletResponse response) {
         Cookie[] cks = request.getCookies();
         if (cks != null) {
