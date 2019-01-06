@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53505eac-d225-41e7-a26f-e1e507be49f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,7 +60,7 @@
           <entry key="ft" value="12" />
           <entry key="java" value="2354" />
           <entry key="jsp" value="4" />
-          <entry key="md" value="471" />
+          <entry key="md" value="482" />
           <entry key="properties" value="8" />
           <entry key="xml" value="69" />
         </counts>
@@ -70,7 +69,7 @@
         <counts>
           <entry key="JAVA" value="2354" />
           <entry key="JSP" value="4" />
-          <entry key="Markdown" value="471" />
+          <entry key="Markdown" value="482" />
           <entry key="Properties" value="8" />
           <entry key="VTL" value="12" />
           <entry key="XML" value="69" />
@@ -106,8 +105,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="724">
-                <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <first_editor relative-caret-position="547">
+                <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               </first_editor>
               <second_editor />
             </state>
@@ -296,11 +295,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pic" />
       <recent name="$PROJECT_DIR$/src/main/java/jikego" />
       <recent name="$PROJECT_DIR$/src/main/java/com/alipay/demo/trade" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources.dev" />
-      <recent name="$PROJECT_DIR$/src/main/resources.prod" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -424,12 +423,12 @@
       <workItem from="1546497867517" duration="47000" />
       <workItem from="1546501491542" duration="910000" />
       <workItem from="1546504445129" duration="15000" />
-      <workItem from="1546738689822" duration="419000" />
+      <workItem from="1546738689822" duration="779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53467000" />
+    <option name="totallyTimeSpent" value="53827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,9 +440,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="941" extended-state="1" />
+    <frame x="0" y="23" width="1680" height="941" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -460,7 +460,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32982457" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4993895" weight="0.24381626" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4993895" visible="true" weight="0.24381626" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.32982457" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32979977" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32982457" />
@@ -802,8 +802,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="724">
-            <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <first_editor relative-caret-position="547">
+            <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           </first_editor>
           <second_editor />
         </state>

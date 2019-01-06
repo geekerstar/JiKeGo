@@ -2,6 +2,8 @@
 
 当前版本V2.0
 
+项目发布地址：https://github.com/geekerstar/JiKeGo/releases
+
 ## 项目预览
 
 ### 在线访问
@@ -53,3 +55,14 @@
 ![pics](https://github.com/geekerstar/JiKeGo-backend/blob/master/pics/8.jpg)
 
 ## 数据表设计
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/1.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/2.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/3.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/4.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/5.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/6.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/7.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/8.jpg)
+![pics](https://github.com/geekerstar/JiKeGo/blob/master/pic/9.jpg)
+
+
