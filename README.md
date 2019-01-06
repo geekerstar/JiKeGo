@@ -14,7 +14,7 @@
 
 ### 视频演示
 
-视频地址：TODO
+视频地址：http://v.youku.com/v_show/id_XMzk5Njk5MDUyMA==.html?spm=a2hzp.8244740.0.0  关键信息已打码
 
 ### 项目地址
 
@@ -51,3 +51,5 @@
 ![pics](https://github.com/geekerstar/JiKeGo-backend/blob/master/pics/6.jpg)
 ![pics](https://github.com/geekerstar/JiKeGo-backend/blob/master/pics/7.jpg)
 ![pics](https://github.com/geekerstar/JiKeGo-backend/blob/master/pics/8.jpg)
+
+## 数据表设计
