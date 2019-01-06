@@ -18,6 +18,7 @@
 
 视频地址：http://v.youku.com/v_show/id_XMzk5Njk5MDUyMA==.html?spm=a2hzp.8244740.0.0  关键信息已打码
 
+
 ### 项目地址
 
 前台前端：https://github.com/geekerstar/JiKeGo-frontend
@@ -25,6 +26,8 @@
 前台后端：https://github.com/geekerstar/JiKeGo-backend
 
 后台：https://github.com/geekerstar/JiKeGo
+
+项目关键节点：https://github.com/geekerstar/JiKeGo/blob/master/note.md
 
 ### 极客购前端-前台界面
 

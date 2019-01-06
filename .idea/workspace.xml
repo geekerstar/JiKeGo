@@ -60,7 +60,7 @@
           <entry key="ft" value="12" />
           <entry key="java" value="2354" />
           <entry key="jsp" value="4" />
-          <entry key="md" value="482" />
+          <entry key="md" value="640" />
           <entry key="properties" value="8" />
           <entry key="xml" value="69" />
         </counts>
@@ -69,7 +69,7 @@
         <counts>
           <entry key="JAVA" value="2354" />
           <entry key="JSP" value="4" />
-          <entry key="Markdown" value="482" />
+          <entry key="Markdown" value="640" />
           <entry key="Properties" value="8" />
           <entry key="VTL" value="12" />
           <entry key="XML" value="69" />
@@ -81,7 +81,7 @@
           <entry key="iml" value="2" />
           <entry key="java" value="295" />
           <entry key="jsp" value="3" />
-          <entry key="md" value="8" />
+          <entry key="md" value="9" />
           <entry key="properties" value="20" />
           <entry key="xml" value="58" />
         </counts>
@@ -92,7 +92,7 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="JAVA" value="295" />
           <entry key="JSP" value="3" />
-          <entry key="Markdown" value="8" />
+          <entry key="Markdown" value="9" />
           <entry key="Properties" value="20" />
           <entry key="XML" value="58" />
         </counts>
@@ -101,12 +101,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="547">
-                <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+              <first_editor relative-caret-position="502">
+                <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/note.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="10" selection-start-column="10" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -137,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jikego/controller/common/interceptor/AuthorityInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jikego/controller/backend/CategoryManageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jikego/controller/backend/OrderManageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jikego/controller/backend/ProductManageController.java" />
@@ -188,6 +199,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jikego/dao/ProductMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jikego/service/ICartService.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/note.md" />
       </list>
     </option>
   </component>
@@ -423,12 +435,12 @@
       <workItem from="1546497867517" duration="47000" />
       <workItem from="1546501491542" duration="910000" />
       <workItem from="1546504445129" duration="15000" />
-      <workItem from="1546738689822" duration="779000" />
+      <workItem from="1546738689822" duration="1157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53827000" />
+    <option name="totallyTimeSpent" value="54205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +453,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="941" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -490,13 +501,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jikego/util/DateTimeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jikego/util/FTPUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-980">
@@ -802,8 +806,18 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="547">
-            <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <first_editor relative-caret-position="502">
+            <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="10" selection-start-column="10" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>
